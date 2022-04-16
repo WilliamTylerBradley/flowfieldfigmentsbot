@@ -6,10 +6,10 @@ jobs:
   flowfieldsfigmentbot-post:
     runs-on: macOS-latest
     env:
-      RBOT_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
-      RBOT_TWITTER_CONSUMER_API_SECRET: ${{ secrets.FFF_TWITTER_CONSUMER_API_SECRET }}
-      RBOT_TWITTER_ACCESS_TOKEN: ${{ secrets.FFF_TWITTER_ACCESS_TOKEN }}
-      RBOT_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.FFF_TWITTER_ACCESS_TOKEN_SECRET }}
+      FFF_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
+      FFF_TWITTER_CONSUMER_API_SECRET: ${{ secrets.FFF_TWITTER_CONSUMER_API_SECRET }}
+      FFF_TWITTER_ACCESS_TOKEN: ${{ secrets.FFF_TWITTER_ACCESS_TOKEN }}
+      FFF_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.FFF_TWITTER_ACCESS_TOKEN_SECRET }}
     steps:
       - uses: actions/checkout@main
       - uses: r-lib/actions/setup-r@v2
