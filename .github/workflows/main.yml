@@ -6,6 +6,7 @@ jobs:
   flowfieldsfigmentbot-post:
     runs-on: macOS-latest
     env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       FFF_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
       FFF_TWITTER_CONSUMER_API_SECRET: ${{ secrets.FFF_TWITTER_CONSUMER_API_SECRET }}
       FFF_TWITTER_ACCESS_TOKEN: ${{ secrets.FFF_TWITTER_ACCESS_TOKEN }}
