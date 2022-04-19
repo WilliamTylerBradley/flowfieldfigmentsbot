@@ -5,7 +5,9 @@ on:
 jobs:
   flowfieldsfigmentbot-post:
     runs-on: macOS-latest
+    timeout-minutes: 15
     env:
+      RENV_PATHS_ROOT: ~/Library/Application Support/renv
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       FFF_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
       FFF_TWITTER_CONSUMER_API_SECRET: ${{ secrets.FFF_TWITTER_CONSUMER_API_SECRET }}
@@ -14,9 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: r-lib/actions/setup-r@v2
-      - name: Install rtweet package
-        run: Rscript -e 'install.packages("rtweet")'
-      - name: Install devtools package
-        run: Rscript -e 'install.packages("devtools")'
+        with:
+          install-r: false
+          use-public-rspm: true
+      - name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+      - name: Restore packages
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::restore()
       - name: Create and post tweet
         run: Rscript tweet_art.R
