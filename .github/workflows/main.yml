@@ -5,9 +5,9 @@ on:
 jobs:
   flowfieldsfigmentbot-post:
     runs-on: macOS-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     env:
-      RENV_PATHS_ROOT: ~/Library/Caches/org.R-project.R/R/renv
+      RENV_PATHS_ROOT: ~/.local/share/renv
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       FFF_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
       FFF_TWITTER_CONSUMER_API_SECRET: ${{ secrets.FFF_TWITTER_CONSUMER_API_SECRET }}
@@ -20,7 +20,7 @@ jobs:
           install-r: false
           use-public-rspm: true
       - name: Cache packages
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ env.RENV_PATHS_ROOT }}
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
