@@ -22,6 +22,11 @@ jobs:
         shell: bash
         run: |
           echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
+      - name: Install and activate renv
+        run: |
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::activate()
+        shell: Rscript {0}
       - name: Get R and OS version
         id: get-version
         run: |
@@ -37,7 +42,6 @@ jobs:
       - name: Restore packages
         shell: Rscript {0}
         run: |
-          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
           renv::restore()    
       - name: Create and post tweet
         run: Rscript tweet_art.R    
