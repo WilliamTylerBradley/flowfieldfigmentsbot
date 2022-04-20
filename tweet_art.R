@@ -1,4 +1,7 @@
 library(rtweet)
+library(devtools)
+
+devtools::install_github("WilliamTylerBradley/flowfieldfigments")
 library(flowfieldfigments)
 
 token <- rtweet::create_token(
