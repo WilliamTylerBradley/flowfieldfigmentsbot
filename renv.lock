@@ -72,6 +72,14 @@
         "sys"
       ]
     },
+    "av": {
+      "Package": "av",
+      "Version": "0.7.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "466fd3aca5fa81e91a6c5d14e6deee8e",
+      "Requirements": []
+    },
     "cli": {
       "Package": "cli",
       "Version": "3.2.0",
@@ -176,10 +184,11 @@
       "RemoteRepo": "flowfieldfigments",
       "RemoteUsername": "WilliamTylerBradley",
       "RemoteRef": "HEAD",
-      "RemoteSha": "018e2cc1feb04ada18b4cb66f94ed76072004e1f",
-      "Hash": "79311eb188d3adc80a27102788249943",
+      "RemoteSha": "94d14efc06c8ca230e203229206c3266ed48c3f1",
+      "Hash": "c1b4fec7c0892eade549257a809b81c9",
       "Requirements": [
         "ambient",
+        "av",
         "dplyr",
         "ggplot2",
         "gifski",

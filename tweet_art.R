@@ -22,7 +22,7 @@ color_scheme <- c("full", "subset")[day %% 2 + 1]
 color_subset_center <- runif(1, 0, 360)
 color_subset_width <- runif(1, 30, 90)
 hue_turn <- runif(1, 0, 360)
-media <- c("png", "gif", "png", "gif", "png")[day %% 5 + 1]
+media <- c("png", "mp4", "png", "mp4", "png")[day %% 5 + 1]
 movement <- c("", "march", "", "glide", "")[day %% 5 + 1]
 alpha_taper <- c("start", "", "end", "", "both")[day %% 5 + 1]
 
@@ -39,9 +39,9 @@ if(media == "png") {
                                 alpha_taper = alpha_taper, 
                                 output_file = output_file)
 } else {
-  output_file <- tempfile(fileext = ".gif")
+  output_file <- tempfile(fileext = ".mp4")
   
-  flowfieldfigments::create_gif(seeds = seeds, 
+  flowfieldfigments::create_mp4(seeds = seeds, 
                                 size = size, 
                                 anchor_layout = anchor_layout, 
                                 hue_turn = hue_turn, 
