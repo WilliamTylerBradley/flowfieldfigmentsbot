@@ -13,7 +13,7 @@ token <- rtweet::create_token(
 seed <- as.numeric(format(Sys.Date(),"%Y%m%d"))
 set.seed(seed)
 
-day <- as.numeric(strftime(Sys.Date(), format = "%j")) + 2
+day <- as.numeric(strftime(Sys.Date(), format = "%j")) + 1
 
 seeds <- sample(1:100000, 3)
 size <- sample(seq(50, 1500), 1)
@@ -54,6 +54,8 @@ if(media == "png") {
 
 
 status <- paste0("set.seed(", seed, ")")
+alt_text <- "Generative art featuring flow fields. Paths are various colors on a white background."
 rtweet::post_tweet(status = status,
                    media = output_file,
-                   token = token)
+                   token = token,
+                   media_alt_text = alt_text)
