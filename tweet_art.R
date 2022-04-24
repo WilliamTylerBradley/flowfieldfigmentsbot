@@ -10,10 +10,10 @@ token <- rtweet::create_token(
   set_renv = FALSE
 )
 
-seed <- as.numeric(format(Sys.Date(),"%Y%m%d")) - 1
+seed <- as.numeric(format(Sys.Date(),"%Y%m%d"))
 set.seed(seed)
 
-day <- as.numeric(strftime(Sys.Date(), format = "%j")) + 1
+day <- as.numeric(strftime(Sys.Date(), format = "%j"))
 
 seeds <- sample(1:100000, 3)
 size <- sample(seq(50, 1500), 1)
