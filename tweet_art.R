@@ -5,8 +5,7 @@ auth <- rtweet::rtweet_bot(
   api_key = Sys.getenv("FFF_TWITTER_CONSUMER_API_KEY"),
   api_secret = Sys.getenv("FFF_TWITTER_CONSUMER_API_SECRET"),
   access_token = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN"),
-  access_secret = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN_SECRET"),
-  set_renv = FALSE
+  access_secret = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN_SECRET")
 )
 
 seed <- as.numeric(format(Sys.Date(),"%Y%m%d"))
