@@ -481,15 +481,15 @@
     },
     "rtweet": {
       "Package": "rtweet",
-      "Version": "0.7.0.9019",
+      "Version": "0.7.0.9021",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "rtweet",
       "RemoteUsername": "ropensci",
       "RemoteRef": "HEAD",
-      "RemoteSha": "6723a8abeeba47361bf0d0817657c55387bd02bc",
-      "Hash": "22390859d4d807af4ba4f8c99033b787",
+      "RemoteSha": "f37ea41c7b60fb4cdc35536056039e9788e3c290",
+      "Hash": "fe08d087466ef800da963d26baa9c6f0",
       "Requirements": [
         "bit64",
         "curl",

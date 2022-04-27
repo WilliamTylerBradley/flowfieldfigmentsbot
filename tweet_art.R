@@ -1,10 +1,9 @@
 library(rtweet)
 library(flowfieldfigments)
 
-token <- rtweet::create_token(
-  app = "flowfieldfigments",
-  consumer_key = Sys.getenv("FFF_TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("FFF_TWITTER_CONSUMER_API_SECRET"),
+auth <- rtweet::rtweet_bot(
+  api_key = Sys.getenv("FFF_TWITTER_CONSUMER_API_KEY"),
+  api_secret = Sys.getenv("FFF_TWITTER_CONSUMER_API_SECRET"),
   access_token = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN"),
   access_secret = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN_SECRET"),
   set_renv = FALSE
@@ -57,5 +56,5 @@ status <- paste0("set.seed(", seed, ")")
 alt_text <- "Generative art featuring flow fields. Paths are various colors on a white background."
 rtweet::post_tweet(status = status,
                    media = output_file,
-                   token = token,
+                   token = auth,
                    media_alt_text = alt_text)
