@@ -1,19 +1,18 @@
 name: flowfieldfigmentsbot
 on:
-  workflow_dispatch:
-  # schedule:
-  #   - cron: '38 8 * * 0'
-  #   - cron: '34 16 * * 1'
-  #   - cron: '24 13 * * 2'
-  #   - cron: '54 21 * * 3'
-  #   - cron: '12 22 * * 4'
-  #   - cron: '7 19 * * 5'
-  #   - cron: '45 18 * * 6'
+  schedule:
+    - cron: '38 8 * * 0'
+    - cron: '34 16 * * 1'
+    - cron: '24 13 * * 2'
+    - cron: '54 21 * * 3'
+    - cron: '12 22 * * 4'
+    - cron: '7 19 * * 5'
+    - cron: '45 18 * * 6'
   
 jobs:
   flowfieldsfigmentbot-post:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 10
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       FFF_TWITTER_CONSUMER_API_KEY: ${{ secrets.FFF_TWITTER_CONSUMER_API_KEY }}
