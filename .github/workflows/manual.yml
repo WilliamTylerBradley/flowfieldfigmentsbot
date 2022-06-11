@@ -4,7 +4,7 @@ on:
   
 jobs:
   flowfieldsfigmentbot-post:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     timeout-minutes: 10
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
