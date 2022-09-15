@@ -2,8 +2,8 @@ library(rtweet)
 library(flowfieldfigments)
 
 auth <- rtweet::rtweet_bot(
-  api_key = Sys.getenv("FFF_TWITTER_CONSUMER_API_KEY"),
-  api_secret = Sys.getenv("FFF_TWITTER_CONSUMER_API_SECRET"),
+  api_key = Sys.getenv("FFF_TWITTER_API_KEY"),
+  api_secret = Sys.getenv("FFF_TWITTER_API_KEY_SECRET"),
   access_token = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN"),
   access_secret = Sys.getenv("FFF_TWITTER_ACCESS_TOKEN_SECRET")
 )
